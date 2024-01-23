@@ -1,0 +1,116 @@
+---
+title: "Pengaruh Tingkat Pengangguran Terhadap Pengeluaran Konsumsi Rumah Tangga di Kabupaten Rembang, Jawa Tengah Tahun 2013-2022 "
+subtitle: "Metode Penelitian Politeknik APP Jakarta"
+author: "Elsa Putri Rahmadini"
+date: 2024-01-10
+number-sections: true
+format:
+  html: default
+  docx: default
+---
+
+![](poltekapp.jpg)
+
+## Pendahuluan
+
+### Latar belakang
+
+Tingkat Pengangguran adalah salah satu indikator penting dari kondisi perekonomian suatu negara. Tingkat Pengangguran yang tinggi menunjukkan bahwa ada banyak orang yang tidak memiliki pekerjaan dan sumber pendapatan. Hal ini dapat berdampak negatif terhadap perekonomian secara keseluruhan, termasuk pengeluaran konsumsi rumah tangga.
+
+Pengeluaran konsumsi rumah tangga adalah salah satu komponen utama dari perekonomian suatu negara. Pengeluaran konsumsi rumah tangga yang tinggi menunjukkan bahwa masyarakat memiliki daya beli yang tinggi menunjukkan bahwa masyarakat memiliki daya beli yang tinggi dan dapat meningkatkan permintaan terhadap barang dan jasa. Hal ini dapat mendorong pertumbuhan ekonomi.
+
+### Ruang lingkup
+
+Ruang lingkup pada penelitian ini memuat variable mengenai Tingkat Pengangguran di Kabupaten Rembang, Jawa Tengah dan Pengeluaran Konsumsi Rumah Tangga di Kabupaten Rembang, Jawa Tengah. Data yang digunakan adalah data yang bersifat time series dalam kurun waktu 2013-2022 dengan satuan persen dan Juta Rupiah. Data tersebut menjadi objek penelitian ini.
+
+### Rumusan masalah
+
+Berdasarkan uraian latar belakang di atas, maka yang menjadi rumusan masalah pada penelitian ini adalah:
+
+1.  Apakah Tingkat Pengangguran berpengaruh besar pada Pengeluaran Konsumsi Rumah Tangga di Kabupaten Rembang, Jawa Tengah?
+
+### Tujuan dan manfaat penelitian
+
+Tujuan penelitian ini untuk mengetahui seberapa pengaruhnya Tingkat Pengangguran di Rembang, Jawa Tengah terkait terhadap Pengeluaran Konsumsi Rumah Tangga di Kabupaten Rembang, Jawa Tengah.
+
+Manfaat penelitian ini memberitahu masyarakat mengenai pengaruhnya tingkat pengangguran terhadap Pengeluaran Konsumsi Rumah tangga sehingga dapat mengatur keuangannya lebih baik dan semangat untuk mencari pekerjaan.
+
+### Package
+
+Ini tidak wajib ada di tulisan anda tapi anda dapat menunjukkan Packages yang digunakan antara lain sebagai berikut:
+
+```{r}
+#| warning: false
+#| echo: true
+library(tidyverse)
+library(readxl)
+library(WDI) # tambahkan library lain jika diperlukan
+```
+
+## Studi pustaka
+
+Sukirno (1994) mendefinisikan pengangguran sebagai suatu keadaan dimana seseorang yang sudah bekerja mencari pekerjaan namun belum dapat memperoleh pekerjaan.
+
+Pengeluaran Konsumsi Rumah Tangga merupakan pengeluaran uang yang dapat dibelanjakan oleh rumah tangga untuk memenuhi kebutuhan sehari-hari melalui pembelian produk dan jasa akhir.
+
+## Metode penelitian
+
+### Data
+
+| Tahun | Tingkat Pengangguran (x) | Pengeluaran Konsumsi Rumah Tangga (Y) |
+|-------|--------------------------|---------------------------------------|
+| 2013  | 5,97                     | 7.976.937,08                          |
+| 2014  | 5,23                     | 8.782.543,17                          |
+| 2015  | 4,51                     | 9.731.003,28                          |
+| 2016  | 4,63                     | 10.426.703,88                         |
+| 2017  | 3,19                     | 11.452.740,57                         |
+| 2018  | 2,83                     | 12.491.052,22                         |
+| 2019  | 3,6                      | 13.587.783,71                         |
+| 2020  | 4,83                     | 13.613.167,54                         |
+| 2021  | 3,67                     | 14.345.785,6                          |
+| 2022  | 1,76                     | 15.909.115,87                         |
+
+: penelitian ini menggunakan data tingkat pengangguran dan data pengeluaran konsumsi rumah tangga di Kabupaten Rembang tahun 2013-2022, data yang dipakai dari Badan Pusat Statistik (BPS)
+
+```{r}
+dat<-read_excel('C:/Metopel UAS 2024/UAS 2024/Data Rembang BPS.xlsx')
+```
+
+```{r}
+plot(dat$X,dat$Y,xlab="Tingkat Pengangguran",ylab="Pengeluaran Konsumsi Rumah Tangga")
+```
+
+### Metode analisis
+
+Metode yang dipilih adalah regresi univariat atau Ordinary Least Square (OLS) dengan 1 variabel independen. Penelitian ini merbaksud mencari hubungan antara hwy dan cty. Spesifikasi yang dilakukan adalah:
+
+$$
+y_{t}=\beta_0 + \beta_1 x_t+\mu_t
+$$ di mana $y_t$ adalah Pengeluaran Konsumsi Rumah Tangga dan $x_t$ adalah Tingkat Pengangguran.
+
+## Pembahasan
+
+### Pembahasan masalah
+
+Dikarenakan penelitian ini menggunakan OLS, Pembahasan yang diberikan mengenai hubungan antara Tingkat Pengangguran dan jumlah Pengeluaran Konsumsi Rumah Tangga. Data tersebut digabungkan dan dilakukan regresi sehingga tampilannya seperti ini
+
+### Analisis masalah
+
+Hasil regresinya adalah
+
+```{r}
+reg1<-lm(Y~X,data=dat)
+summary(reg1) 
+```
+
+## Kesimpulan
+
+Dari hasil regresi dapat dilihat terdapat hubungan negatif yang signifikan antara tingkat pengangguran dan pengeluaran konsumsi rumah tangga. Dengan koefisien X (-1634032) menunjukkan bahwa untuk setiap peningkatab satu unit dalam X, Y diperkirakan menurun sebesar 1634032, dengan p-value \<0,05
+
+## Referensi
+
+Badan Pusat Statistik. (n.d). Retrieved January 23, 2024, from <https://jateng.bps.go.id/indicator/6/64/1/tingkat-pengangguran-terbuka-tpt-.html>
+
+Badan Pusat Statistik. (n.d). Retrieved January 23, 2024, from <https://rembangkab.bps.go.id/indicator/159/112/3/pdrb-atas-dasar-harga-berlaku-menurut-pengeluaran.html>
+
+Hartani, K. A. (2014). Faktor-Faktor Yang Mempengaruhi Konsumsi Rumah Tangga Di Indonesia Tahun 1981-2012 (Doctoral dissertation, UNIVERSITAS AIRLANGGA)
