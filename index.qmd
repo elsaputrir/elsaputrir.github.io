@@ -2,7 +2,7 @@
 title: "Pengaruh Tingkat Pengangguran Terhadap Pengeluaran Konsumsi Rumah Tangga di Kabupaten Rembang, Jawa Tengah Tahun 2013-2022 "
 subtitle: "Metode Penelitian Politeknik APP Jakarta"
 author: "Elsa Putri Rahmadini"
-date: 2024-01-10
+date: 2024-01-24
 number-sections: true
 format:
   html: default
@@ -74,6 +74,7 @@ Pengeluaran Konsumsi Rumah Tangga merupakan pengeluaran uang yang dapat dibelanj
 
 ```{r}
 dat<-read_excel('C:/Metopel UAS 2024/UAS 2024/Data Rembang BPS.xlsx')
+head(dat)
 ```
 
 ```{r}
